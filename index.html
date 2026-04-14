@@ -1,50 +1,235 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My First Website</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>NTS Inspired Modern Site</title>
 
-    <style>
-        body {
-            font-family: Arial;
-            margin: 0;
-            background: #f5f5f5;
-        }
-        header {
-            background: #111;
-            color: white;
-            padding: 15px;
-            text-align: center;
-        }
-        .container {
-            padding: 20px;
-        }
-        button {
-            padding: 10px 20px;
-            background: black;
-            color: white;
-            border: none;
-            cursor: pointer;
-        }
-    </style>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Segoe UI", sans-serif;
+    }
+
+    body {
+      background: #0b1220;
+      color: white;
+      scroll-behavior: smooth;
+    }
+
+    /* NAVBAR */
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: rgba(15, 23, 42, 0.8);
+      backdrop-filter: blur(10px);
+      display: flex;
+      justify-content: space-between;
+      padding: 15px 40px;
+      z-index: 1000;
+    }
+
+    nav h2 {
+      color: #38bdf8;
+    }
+
+    nav a {
+      color: white;
+      margin-left: 20px;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+
+    nav a:hover {
+      color: #38bdf8;
+    }
+
+    /* HERO */
+    .hero {
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      background: radial-gradient(circle at top, #1e3a8a, #0b1220);
+      padding: 20px;
+    }
+
+    .hero h1 {
+      font-size: 3rem;
+      margin-bottom: 10px;
+    }
+
+    .hero p {
+      color: #cbd5e1;
+      max-width: 600px;
+    }
+
+    .btn {
+      margin-top: 20px;
+      padding: 12px 25px;
+      background: #38bdf8;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    /* SECTIONS */
+    section {
+      padding: 80px 20px;
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    h2.section-title {
+      text-align: center;
+      margin-bottom: 40px;
+      color: #38bdf8;
+    }
+
+    /* GRID */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+
+    .card {
+      background: rgba(30, 41, 59, 0.7);
+      padding: 20px;
+      border-radius: 12px;
+      border: 1px solid rgba(255,255,255,0.1);
+      transition: 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      border-color: #38bdf8;
+    }
+
+    /* NOTICE BOARD */
+    .notice {
+      background: #111827;
+      padding: 15px;
+      margin-bottom: 10px;
+      border-left: 4px solid #38bdf8;
+    }
+
+    /* CONTACT */
+    input, textarea {
+      width: 100%;
+      padding: 12px;
+      margin-top: 10px;
+      border-radius: 8px;
+      border: none;
+      outline: none;
+      background: #1e293b;
+      color: white;
+    }
+
+    button {
+      margin-top: 15px;
+      padding: 12px 25px;
+      background: #38bdf8;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px;
+      color: #94a3b8;
+      border-top: 1px solid #1e293b;
+    }
+  </style>
 </head>
+
 <body>
 
-<header>
-    <h1>Welcome to My Website 🚀</h1>
-</header>
+<!-- NAV -->
+<nav>
+  <h2>NTS+</h2>
+  <div>
+    <a href="#about">About</a>
+    <a href="#programs">Programs</a>
+    <a href="#notices">Notices</a>
+    <a href="#contact">Contact</a>
+  </div>
+</nav>
 
-<div class="container">
-    <p>This is my first deployed website.</p>
-    <button onclick="showMessage()">Click Me</button>
+<!-- HERO -->
+<div class="hero">
+  <h1>Advanced Learning Portal</h1>
+  <p>A modern student-focused platform inspired by institutional portals like NTS — redesigned for clarity, speed, and usability.</p>
+  <button class="btn" onclick="document.getElementById('programs').scrollIntoView()">Explore</button>
 </div>
 
-<script>
-    function showMessage() {
-        alert("Website is working!");
-    }
-</script>
+<!-- ABOUT -->
+<section id="about">
+  <h2 class="section-title">About Us</h2>
+  <div class="card">
+    We provide structured learning resources, exam preparation material, and student guidance systems designed for modern education needs.
+  </div>
+</section>
+
+<!-- PROGRAMS -->
+<section id="programs">
+  <h2 class="section-title">Programs</h2>
+
+  <div class="grid">
+    <div class="card">
+      <h3>Engineering Prep</h3>
+      <p>Math, Physics, and technical concepts simplified.</p>
+    </div>
+
+    <div class="card">
+      <h3>Computer Science</h3>
+      <p>Programming, DSA, and development roadmap.</p>
+    </div>
+
+    <div class="card">
+      <h3>Business & MBA</h3>
+      <p>Management, analytics, and leadership skills.</p>
+    </div>
+
+    <div class="card">
+      <h3>Defense Studies</h3>
+      <p>Strategic learning modules and policy insights.</p>
+    </div>
+  </div>
+</section>
+
+<!-- NOTICES -->
+<section id="notices">
+  <h2 class="section-title">Notice Board</h2>
+
+  <div class="notice">📢 Admissions open for 2026 batch</div>
+  <div class="notice">📢 New online test series launched</div>
+  <div class="notice">📢 Scholarship applications live now</div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <h2 class="section-title">Contact Us</h2>
+
+  <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST" class="card">
+    <input type="text" name="name" placeholder="Your Name" required />
+    <input type="email" name="email" placeholder="Your Email" required />
+    <textarea name="message" rows="5" placeholder="Your Message"></textarea>
+    <button type="submit">Send Message</button>
+  </form>
+</section>
+
+<footer>
+  © 2026 Advanced Learning Portal | Built for GitHub Pages
+</footer>
 
 </body>
 </html>
